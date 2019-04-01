@@ -13,6 +13,17 @@ The proposed network consists of 6 strided convolutions which reduce the size of
 ![alt tag](docs/net.png)
 
 
-
-Side-by-side comparison of the model predictions vs. LB simulations results (ground truth) for four test cases. (a) input images used for simulations; (b) model predictions; (c) LB simulation results (ground truth); (d) error percentage between (b) and (c); and (e) distribution of error in each case.
+## Results
+To develop the model, simulation cases are divided into two sections. 
+The first section with 85\% of the data (3,000 image pairs out of 3,550 total pairs) is used to train the model while the remaining 15\% of the data are used as test data. 
+The test portion of the data, which is not used in the training process, is only used to examine the predictive capabilities, and the robustness of the model. 
+All the simulations are tested to verify that they have reached steady state conditions, where kinetic energy of the system becomes constant. 
+The binary images are used for the LB simulations (Figure \ref{error}a). 
+The regions away from the solid-pore interfaces exhibit higher velocity values compared the ones adjacent to the interfaces. Contour plots of x-direction velocity for the developed model (Figure \ref{error}b) and those taken from the LB simulations (Figure \ref{error}c) show similar behavior. The contour plots in Figure \ref{error}c are adjusted based on the minimum and maximum values obtained in contours in Figure b. 
+The behavior in Figure b and c are fairly similar, except for the high (hot-colored) values in Figure \ref{error}c. The positions of the circles (zero-velocity valued pixels in Figure b and Figure \ref{error}c) are accurately predicted. 
+The error plots (Figure \ref{error}d) exhibit errors in the domain. 
+The error for most of the cases are bounded within 20\% errors (Figure \ref{error}e), confirming the plausibility of the approach to replicate costly numerical simulations.
 ![alt tag](docs/error.png)
+
+The predicted mean of x-direction velocity values for all test cases are shown in the following fugure. All the points are projected along the unit-slope line, which shows that predicted values are fairly close to the LB simulation results.
+![alt tag](docs/cross-plot.png)
